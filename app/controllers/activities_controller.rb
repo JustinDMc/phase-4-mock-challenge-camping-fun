@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
     def destroy 
         activity = Activity.find(params[:id])
         if activity 
-            activity.id.signups.destroy_all
+            activity.signups.destroy_all
             activity.destroy
             render json: {}, status: :no_content
         else 
